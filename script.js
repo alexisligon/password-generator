@@ -21,10 +21,10 @@ function writePassword() {
 }
 
 
+//password criteria prompts
 function generatePassword() {
-  
 
-
+//ask for uppercase
 var ask1 = window.confirm("Should your password contain uppercase letters?");
 if (ask1 === true) {
   charSelected = charSelected + upper;//pull from upper string
@@ -34,6 +34,7 @@ if (ask1 === true) {
   console.log (charSelected);
 }
 
+//ask for lowercase
 var ask2 = window.confirm ("Should your password contain lowercase letters?");
 if (ask2 === true) {
   charSelected = charSelected + lower;//pull from lower string
@@ -43,6 +44,7 @@ if (ask2 === true) {
   console.log (charSelected);
 }
 
+//ask for numbers
 var ask3 = window.confirm ("Should your password contain numbers?");
 if (ask3 === true) {
   charSelected = charSelected + num;//pull from numb string
@@ -52,6 +54,7 @@ if (ask3 === true) {
   console.log (charSelected);
 }
 
+//ask for special characters
 var ask4 = window.confirm ("Should your password contain special characters?");
 if (ask4 === true) { 
   charSelected = charSelected + special;//pull from char string
@@ -61,29 +64,23 @@ if (ask4 === true) {
   console.log (charSelected);
 }
 
+//ask for password length
 var passnum = window.prompt("How many characters should your password be? Choose a number between 8 and 128");
 if (passnum >= 8 && passnum <=128) { //allows only input between 8 and 128
-  console.log (passnum);
-  for (let i = 0; i < passnum.length; i++) {
-    const element = passnum[i]; //for loop runs total number input for that many characters
-    var write = charSelected[Math.floor(Math.random() * charSelected.length)];
-    return (write);
+  for (var i = 0; i < passnum.length; index++) {
+    var passwordText = Math.floor(Math.random() * passnum.length);
+    return passwordText;
   }
-} else {
+  
+  }
+ else {
   alert("Please choose between 8 and 128")
   return; // need to stop loop if input outside of parameter
 }
-  return;
+
+
 }
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-
-// var write = password[Math.floor(Math.random) * password.char.length];
-// console.log (write)
-
-// for (var i = 0; i < length; i++) {
-
-// }
