@@ -10,6 +10,11 @@ var num= "0123456789";
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var refreshBtn = document.querySelector("#refresh");
+
+function refreshPage () {
+  window.location.reload();
+}
 
 // Write password to the #password input
 function writePassword() {
@@ -82,3 +87,4 @@ if (passnum >= 8 && passnum <=128){ //allows only input between 8 and 128
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+refreshBtn.addEventListener("click", refreshPage);//added new password button to refresh page and delete previous criteria selection
