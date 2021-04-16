@@ -24,34 +24,42 @@ function generatePassword() {
 
 //ask for uppercase
 var ask1 = window.confirm("Should your password contain uppercase letters?");
-if (ask1 === true) {
-  charSelected = charSelected + upper;//pull from upper string
-} else {
+if (ask1 === false) {
   charSelected = charSelected;
+  console.log(charSelected);
+} else {
+  charSelected = charSelected+ upper;//pull from upper string
+  console.log(charSelected);
 }
 
 //ask for lowercase
 var ask2 = window.confirm ("Should your password contain lowercase letters?");
-if (ask2 === true) {
-  charSelected = charSelected + lower;//pull from lower string
-} else {
+if (ask2 === false) {
   charSelected = charSelected;
+  console.log(charSelected);
+} else {
+  charSelected = charSelected + lower;//pull from lower string
+  console.log(charSelected);
 }
 
 //ask for numbers
 var ask3 = window.confirm ("Should your password contain numbers?");
-if (ask3 === true) {
-  charSelected = charSelected + num;//pull from numb string
+if (ask3 === false) {
+  charSelected = charSelected; 
+  console.log(charSelected);
 } else {
-  charSelected = charSelected;
+  charSelected = charSelected+ num;//pull from numb string
+  console.log(charSelected);
 }
 
 //ask for special characters
 var ask4 = window.confirm ("Should your password contain special characters?");
-if (ask4 === true) { 
-  charSelected = charSelected + special;//pull from char string 
+if (ask4 === false) { 
+  charSelected = charSelected;
+  console.log(charSelected);
 } else {
-  charSelected = charSelected; 
+  charSelected = charSelected + special;//pull from char string  
+  console.log(charSelected);
 }
 
 //ask for password length
