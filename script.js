@@ -65,14 +65,24 @@ if (ask4 === true) {
 }
 
 //ask for password length
-var passnum = window.prompt("How many characters should your password be? Choose a number between 8 and 128");
-if (passnum >= 8 && passnum <=128) { //allows only input between 8 and 128
-  for (var i = 0; i < passnum.length; index++) {
-    var passwordText = Math.floor(Math.random() * passnum.length);
-    return passwordText;
-  }
+var passnum = parseInt(window.prompt("How many characters should your password be? Choose a number between 8 and 128")); //parseInt allows input to be interger and not a string
+if (passnum >= 8 && passnum <=128) 
+{ //allows only input between 8 and 128
+ console.log ('passnum', passnum);
+
+ var theFinalPassword = '' //starting blank password to add to
+ for (var i = 0; i < passnum; i++) { //runs the loop for the selected number of times
+   console.log('index ', i)
+  console.log('char selected ', charSelected.length)
+
+  var passwordText = charSelected.charAt(Math.floor(Math.random() * charSelected.length));//charAt pulls from the entire string, Math.floor Math.random makes the selection random
   
-  }
+  theFinalPassword = theFinalPassword.concat(passwordText) // adds each random selection to the blank starter
+
+   }
+   console.log('THE FINAL PASSWORD!!!!! ', theFinalPassword);
+   return theFinalPassword;
+}
  else {
   alert("Please choose between 8 and 128")
   return; // need to stop loop if input outside of parameter
