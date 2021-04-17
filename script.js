@@ -34,53 +34,41 @@ function generatePassword() {
 var ask1 = window.confirm("Should your password contain uppercase letters?");
 if (ask1 === false) {
   charSelected = charSelected;
-  console.log(charSelected);
 } else {
   charSelected = charSelected+ upper;//pull from upper string
-  console.log(charSelected);
   var prePass = upper.charAt(Math.floor(Math.random() * upper.length));//randomly pulls one character from this string and adds to the final password, 
   //this ensures at least one character is chosen from each selected string
-  types++;//
-  console.log(prePass);
+  types++;
 }
 
 //ask for lowercase
 var ask2 = window.confirm ("Should your password contain lowercase letters?");
 if (ask2 === false) {
   charSelected = charSelected;
-  console.log(charSelected);
 } else {
   charSelected = charSelected + lower;//pull from lower string
-  console.log(charSelected);
   var prePass = lower.charAt(Math.floor(Math.random() * lower.length)) + prePass;
   types++;
-  console.log(prePass);
 }
 
 //ask for numbers
 var ask3 = window.confirm ("Should your password contain numbers?");
 if (ask3 === false) {
   charSelected = charSelected; 
-  console.log(charSelected);
 } else {
   charSelected = charSelected+ num;//pull from numb string
-  console.log(charSelected);
   var prePass = num.charAt(Math.floor(Math.random() * num.length)) + prePass;
   types++;
-  console.log(prePass);
 }
 
 //ask for special characters
 var ask4 = window.confirm ("Should your password contain special characters?");
 if (ask4 === false) { 
   charSelected = charSelected;
-  console.log(charSelected);
 } else {
   charSelected = charSelected + special;//pull from char string  
-  console.log(charSelected);
   var prePass = special.charAt(Math.floor(Math.random() * special.length)) + prePass;
   types++;
-  console.log(prePass);
 }
 var theFinalPassword = '' //starting blank password to add random characters to
 theFinalPassword = theFinalPassword.concat(prePass);//adds first randomly selected criteria characters to the blank final password
